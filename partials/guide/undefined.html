@@ -1,0 +1,53 @@
+
+
+<div>
+  <a ng-click="openPlunkr('examples/example-example108')" class="btn pull-right">
+    <i class="glyphicon glyphicon-edit">&nbsp;</i>
+    Edit in Plunker</a>
+  <div class="runnable-example"
+      path="examples/example-example108"
+      module="scopeExample">
+
+   
+    <div class="runnable-example-file" 
+      name="script.js"
+      language="js"
+      type="js">
+      <pre><code>angular.module(&#39;scopeExample&#39;, [])&#10;  .controller(&#39;MyController&#39;, [&#39;$scope&#39;, function($scope) {&#10;    $scope.username = &#39;World&#39;;&#10;&#10;    $scope.sayHello = function() {&#10;      $scope.greeting = &#39;Hello &#39; + $scope.username + &#39;!&#39;;&#10;    };&#10;  }]);</code></pre>
+    </div>
+  
+    <div class="runnable-example-file" 
+      name="index.html"
+      language="html"
+      type="html">
+      <pre><code>&lt;div ng-controller=&quot;MyController&quot;&gt;&#10;  Your name:&#10;    &lt;input type=&quot;text&quot; ng-model=&quot;username&quot;&gt;&#10;    &lt;button ng-click=&#39;sayHello()&#39;&gt;greet&lt;/button&gt;&#10;  &lt;hr&gt;&#10;  {{greeting}}&#10;&lt;/div&gt;</code></pre>
+    </div>
+  
+
+    <iframe class="runnable-example-frame" src="examples/example-example108/index.html" name="example-example108"></iframe>
+  </div>
+</div>
+
+er&#39;]).&#10;  run(function(greeter, user) {&#10;    // This is effectively part of the main method initialization code&#10;    greeter.localize({&#10;      salutation: &#39;Bonjour&#39;&#10;    });&#10;    user.load(&#39;World&#39;);&#10;  });&#10;&#10;&#10;// A Controller for your app&#10;var XmplController = function($scope, greeter, user) {&#10;  $scope.greeting = greeter.greet(user.name);&#10;};</code></pre>
+    </div>
+  
+
+    <iframe class="runnable-example-frame" src="examples/example-example107/index.html" name="example-example107"></iframe>
+  </div>
+</div>
+
+efresh = function() {&#10;      var url = YAHOO_FINANCE_URL_PATTERN.&#10;                 replace(&#39;PAIRS&#39;, &#39;USD&#39; + currencies.join(&#39;&quot;,&quot;USD&#39;));&#10;      return $http.jsonp(url).success(function(data) {&#10;        var newUsdToForeignRates = {};&#10;        angular.forEach(data.query.results.rate, function(rate) {&#10;          var currency = rate.id.substring(3,6);&#10;          newUsdToForeignRates[currency] = window.parseFloat(rate.Rate);&#10;        });&#10;        usdToForeignRates = newUsdToForeignRates;&#10;      });&#10;    };&#10;&#10;    refresh();&#10;&#10;    return {&#10;      currencies: currencies,&#10;      convert: convert,&#10;      refresh: refresh&#10;    };&#10;  }]);</code></pre>
+    </div>
+  
+    <div class="runnable-example-file" 
+      name="index.html"
+      language="html"
+      type="html">
+      <pre><code>&lt;div ng-app=&quot;invoice3&quot; ng-controller=&quot;InvoiceController as invoice&quot;&gt;&#10;  &lt;b&gt;Invoice:&lt;/b&gt;&#10;  &lt;div&gt;&#10;    Quantity: &lt;input type=&quot;number&quot; ng-model=&quot;invoice.qty&quot; required &gt;&#10;  &lt;/div&gt;&#10;  &lt;div&gt;&#10;    Costs: &lt;input type=&quot;number&quot; ng-model=&quot;invoice.cost&quot; required &gt;&#10;    &lt;select ng-model=&quot;invoice.inCurr&quot;&gt;&#10;      &lt;option ng-repeat=&quot;c in invoice.currencies&quot;&gt;{{c}}&lt;/option&gt;&#10;    &lt;/select&gt;&#10;  &lt;/div&gt;&#10;  &lt;div&gt;&#10;    &lt;b&gt;Total:&lt;/b&gt;&#10;    &lt;span ng-repeat=&quot;c in invoice.currencies&quot;&gt;&#10;      {{invoice.total(c) | currency:c}}&#10;    &lt;/span&gt;&#10;    &lt;button class=&quot;btn&quot; ng-click=&quot;invoice.pay()&quot;&gt;Pay&lt;/button&gt;&#10;  &lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
+    </div>
+  
+
+    <iframe class="runnable-example-frame" src="examples/example-guide-concepts-3/index.html" name="example-guide-concepts-3"></iframe>
+  </div>
+</div>
+

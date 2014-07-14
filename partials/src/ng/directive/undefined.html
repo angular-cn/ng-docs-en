@@ -1,0 +1,66 @@
+
+
+<div>
+  <a ng-click="openPlunkr('examples/example-example40')" class="btn pull-right">
+    <i class="glyphicon glyphicon-edit">&nbsp;</i>
+    Edit in Plunker</a>
+  <div class="runnable-example"
+      path="examples/example-example40">
+
+   
+    <div class="runnable-example-file" 
+      name="index.html"
+      language="html"
+      type="html">
+      <pre><code>&lt;div&gt;Normal: {{1 + 2}}&lt;/div&gt;&#10;&lt;div ng-non-bindable&gt;Ignored: {{1 + 2}}&lt;/div&gt;</code></pre>
+    </div>
+  
+    <div class="runnable-example-file" 
+      name="protractor.js"
+      type="protractor"
+      language="js">
+      <pre><code>it(&#39;should check ng-non-bindable&#39;, function() {&#10;  expect(element(by.binding(&#39;1 + 2&#39;)).getText()).toContain(&#39;3&#39;);&#10;  expect(element.all(by.css(&#39;div&#39;)).last().getText()).toMatch(/1 \+ 2/);&#10;});</code></pre>
+    </div>
+  
+
+    <iframe class="runnable-example-frame" src="examples/example-example40/index.html" name="example-example40"></iframe>
+  </div>
+</div>
+
+0;  &lt;/div&gt;&#10;&lt;/div&gt;&#10;&lt;/div&gt;</code></pre>
+    </div>
+  
+    <div class="runnable-example-file" 
+      name="protractor.js"
+      type="protractor"
+      language="js">
+      <pre><code>it(&#39;should alias index positions&#39;, function() {&#10;  var elements = element.all(by.css(&#39;.example-init&#39;));&#10;  expect(elements.get(0).getText()).toBe(&#39;list[ 0 ][ 0 ] = a;&#39;);&#10;  expect(elements.get(1).getText()).toBe(&#39;list[ 0 ][ 1 ] = b;&#39;);&#10;  expect(elements.get(2).getText()).toBe(&#39;list[ 1 ][ 0 ] = c;&#39;);&#10;  expect(elements.get(3).getText()).toBe(&#39;list[ 1 ][ 1 ] = d;&#39;);&#10;});</code></pre>
+    </div>
+  
+
+    <iframe class="runnable-example-frame" src="examples/example-example39/index.html" name="example-example39"></iframe>
+  </div>
+</div>
+
+>Content of template2.html</code></pre>
+    </div>
+  
+    <div class="runnable-example-file" 
+      name="animations.css"
+      language="css"
+      type="css">
+      <pre><code>.slide-animate-container {&#10;  position:relative;&#10;  background:white;&#10;  border:1px solid black;&#10;  height:40px;&#10;  overflow:hidden;&#10;}&#10;&#10;.slide-animate {&#10;  padding:10px;&#10;}&#10;&#10;.slide-animate.ng-enter, .slide-animate.ng-leave {&#10;  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;&#10;  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;&#10;&#10;  position:absolute;&#10;  top:0;&#10;  left:0;&#10;  right:0;&#10;  bottom:0;&#10;  display:block;&#10;  padding:10px;&#10;}&#10;&#10;.slide-animate.ng-enter {&#10;  top:-50px;&#10;}&#10;.slide-animate.ng-enter.ng-enter-active {&#10;  top:0;&#10;}&#10;&#10;.slide-animate.ng-leave {&#10;  top:0;&#10;}&#10;.slide-animate.ng-leave.ng-leave-active {&#10;  top:50px;&#10;}</code></pre>
+    </div>
+  
+    <div class="runnable-example-file" 
+      name="protractor.js"
+      type="protractor"
+      language="js">
+      <pre><code>var templateSelect = element(by.model(&#39;template&#39;));&#10;var includeElem = element(by.css(&#39;[ng-include]&#39;));&#10;&#10;it(&#39;should load template1.html&#39;, function() {&#10;  expect(includeElem.getText()).toMatch(/Content of template1.html/);&#10;});&#10;&#10;it(&#39;should load template2.html&#39;, function() {&#10;  if (browser.params.browser == &#39;firefox&#39;) {&#10;    // Firefox can&#39;t handle using selects&#10;    // See https://github.com/angular/protractor/issues/480&#10;    return;&#10;  }&#10;  templateSelect.click();&#10;  templateSelect.all(by.css(&#39;option&#39;)).get(2).click();&#10;  expect(includeElem.getText()).toMatch(/Content of template2.html/);&#10;});&#10;&#10;it(&#39;should change to blank&#39;, function() {&#10;  if (browser.params.browser == &#39;firefox&#39;) {&#10;    // Firefox can&#39;t handle using selects&#10;    return;&#10;  }&#10;  templateSelect.click();&#10;  templateSelect.all(by.css(&#39;option&#39;)).get(0).click();&#10;  expect(includeElem.isPresent()).toBe(false);&#10;});</code></pre>
+    </div>
+  
+
+    <iframe class="runnable-example-frame" src="examples/example-example38/index.html" name="example-example38"></iframe>
+  </div>
+</div>
+
